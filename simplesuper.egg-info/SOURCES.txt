@@ -1,0 +1,7 @@
+setup.py
+simple_super.py
+simplesuper.egg-info/PKG-INFO
+simplesuper.egg-info/SOURCES.txt
+simplesuper.egg-info/dependency_links.txt
+simplesuper.egg-info/top_level.txt
+simplesuper.egg-info/zip-safe
