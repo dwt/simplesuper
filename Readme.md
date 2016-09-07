@@ -33,39 +33,46 @@ Afterwards you can just use it in three forms in any method:
     
     (self.super is the same as super(CurrentClass, self) but more DRY)
 
-Known Bugs:
+## Known Bugs:
+
   - Works only for object subclasses (new style classes)
   - Doesn't find super-methods of decorated methods as the code 
     of the current method can't be found in the class object under 
     the name of the method.
 
-TODO:
-  - Package it all up nicely so it's super easy to use
+## TODO:
+
   - Find a way so you can do something like from simple_super import 
     use_in_object to get every object enhanced by its niceness.
 
-Changelog
+## Changelog:
+
 1.0.5 (2016-09-07)
+
   - package for pypi to have an easy dependency
   - small cleanups to make it easier to step over this code in the debugger
 
 1.0.4 (2010-06-06)
+
   - Add heuristic to move arguments to kwargs if lower method has more named
     arguments than the upper method
 
 1.0.3 (2010-05-31)
+
   - Added compatibility for Python 3
   - Moved stand-alone functions into nice classes
 
 1.0.2 (2010-03-27)
+
   - Simplistic heuristic detection if self.super() or 
     self.super(*args, **kwargs) was called so we can pass the right parameters
   - Made simple_super compatible with Python 2.3 and old-style classes
 
 1.0.1
+
   - do not add arguments if subclass uses self.super() and super class does 
     not get any arguments besides self.
 
 1.0
+
   - initial release
-"""
