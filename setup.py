@@ -23,7 +23,7 @@ setup(
     name='simplesuper',
     description='Simpler way to call super methods without all the repetition',
     long_description=readme(),
-    version='1.0.7',
+    version='1.0.8',
     classifiers=[
         "Programming Language :: Python :: 2",
         "Topic :: Software Development",
