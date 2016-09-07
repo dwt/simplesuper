@@ -22,7 +22,7 @@ def readme():
 setup(
     name='simplesuper',
     description=readme(),
-    version='1.0.5',
+    version='1.0.6',
     classifiers=[
         "Programming Language :: Python :: 2",
         "Topic :: Software Development",

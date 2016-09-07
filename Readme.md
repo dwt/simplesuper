@@ -47,7 +47,7 @@ Afterwards you can just use it in three forms in any method:
 
 ## Changelog:
 
-1.0.5 (2016-09-07)
+1.0.5 and 1.0.6 (2016-09-07)
 
   - package for pypi to have an easy dependency
   - small cleanups to make it easier to step over this code in the debugger
