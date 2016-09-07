@@ -14,7 +14,7 @@ def readme():
         from subprocess import check_output
         return str(check_output(['pandoc', '--from', 'markdown', '--to', 'rst', 'README.md']))
     except (ImportError, OSError, CalledProcessError) as error:
-        print('python2.6 and pandoc is required to get the description as rst (as required to get nice rendering in pypi) - using the original markdown instead.',
+        print('python2.7 and pandoc is required to get the description as rst (as required to get nice rendering in pypi) - using the original markdown instead.',
               'See http://johnmacfarlane.net/pandoc/')
     return str(open(path.join(here, 'Readme.md')).read())
 
