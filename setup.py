@@ -23,7 +23,7 @@ setup(
     name='simplesuper',
     description='Simpler way to call super methods without all the repetition',
     long_description=readme(),
-    version='1.0.8',
+    version='1.0.9',
     classifiers=[
         "Programming Language :: Python :: 2",
         "Topic :: Software Development",
@@ -37,6 +37,6 @@ setup(
     license="ISC",
     url='https://github.com/dwt/simplesuper',
     keywords='python 2, super, convenience, api',
-    py_modules=['simple_super'],
-    test_suite = "simple_super",
+    py_modules=['simplesuper'],
+    test_suite = "simplesuper",
 )
