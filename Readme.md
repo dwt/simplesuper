@@ -1,7 +1,9 @@
-License: ISC - See LICENSE file
+# SimpleSuper [![Build Status](https://travis-ci.org/dwt/simplesuper.svg?branch=master)](https://travis-ci.org/dwt/simplesuper)
+
+License: ISC - See LICENSE.txt file
 
 This is a simple piece of code born out of our frustration with the 
-repetitiveness of calling overriden methods in python.
+repetitiveness of calling overridden methods in python.
 having to write
 
     super(TheCurrentClassThatImIn, self).the_method_that_im_currently_in(all, the, arguments, again)
@@ -9,14 +11,14 @@ having to write
 every time you want to do that is just not DRY and makes refactoring
 that much more tedious.
 
-Wouldn't it be much coolder if you could just write self.super() instead? 
-Yeah we thought so too.
+Wouldn't it be much cooler if you could just write self.super() instead? 
+Yeah, we thought so, too.
 
-In the superclass of the class where you want to use this
-you need to make the superproxy available like this:
+In the class where you want to use this (or any superclass),
+you need to make the SuperProxy available like this:
 
-class SuperClass(object):
-    super = SuperProxy()
+    class SuperClass(object):
+        super = SuperProxy()
 
 Afterwards you can just use it in three forms in any method:
   - Auto-pick-up all available arguments and call the super method of the current method
