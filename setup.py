@@ -16,10 +16,7 @@ def readme():
     except (ImportError, OSError, CalledProcessError) as error:
         print('python2.6 and pandoc is required to get the description as rst (as required to get nice rendering in pypi) - using the original markdown instead.',
               'See http://johnmacfarlane.net/pandoc/')
-    try:
-        return str(open(path.join(here, 'Readme.md')).read())
-    except Exception as e:
-        return 'Readme.md not found'
+    return str(open(path.join(here, 'Readme.md')).read())
 
 
 setup(
