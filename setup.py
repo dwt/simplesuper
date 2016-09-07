@@ -21,7 +21,7 @@ def readme():
 
 setup(
     name='simplesuper',
-    description=readme(),
+    long_description=readme(),
     version='1.0.6',
     classifiers=[
         "Programming Language :: Python :: 2",
