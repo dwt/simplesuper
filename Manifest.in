@@ -1,0 +1,3 @@
+include Readme.md
+include Manifest.in
+include LICENSE.txt

@@ -16,11 +16,15 @@ def readme():
     except (ImportError, OSError, CalledProcessError) as error:
         print('python2.6 and pandoc is required to get the description as rst (as required to get nice rendering in pypi) - using the original markdown instead.',
               'See http://johnmacfarlane.net/pandoc/')
-    return str(open(path.join(here, 'Readme.md')).read())
+    try:
+        return str(open(path.join(here, 'Readme.md')).read())
+    except Exception as e:
+        return 'Readme.md not found'
 
 
 setup(
     name='simplesuper',
+    description='Simpler way to call super methods without all the repetition',
     long_description=readme(),
     version='1.0.7',
     classifiers=[
@@ -36,11 +40,6 @@ setup(
     license="ISC",
     url='https://github.com/dwt/simplesuper',
     keywords='python 2, super, convenience, api',
-    include_package_data = True,
-    package_data = {
-        '': ['*.txt', '*.md'],
-    },
     py_modules=['simple_super'],
     test_suite = "simple_super",
-    zip_safe=True,
 )
