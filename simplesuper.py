@@ -104,8 +104,7 @@ class SuperFinder(object):
         return arg_values[arg_names[0]]
     
     def _points_to_this_function(self, code, func):
-        is_python2x = (2 == sys.version_info[0])
-        if is_python2x:
+        if IS_PY2:
             return self._points_to_this_function_py2x(code, func)
         return self._points_to_this_function_py3k(code, func)
     
