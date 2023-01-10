@@ -170,7 +170,6 @@ class Super(object):
         assert self.did_call_super
 
 
-
 class SuperTests(unittest.TestCase):
     
     def test_no_arguments(self):
