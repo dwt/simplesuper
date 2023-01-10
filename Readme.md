@@ -1,4 +1,4 @@
-# SimpleSuper [![Build Status](https://travis-ci.org/dwt/simplesuper.svg?branch=master)](https://travis-ci.org/dwt/simplesuper)
+# SimpleSuper [![Build Status](https://app.travis-ci.com/dwt/simplesuper.svg?branch=master)](https://app.travis-ci.com/github/dwt/simplesuper)
 
 License: ISC - See LICENSE.txt file
 
