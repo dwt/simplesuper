@@ -21,4 +21,4 @@ matrix:
       dist: jammy
     - python: "pypy3"
       dist: jammy
-script: setup.py test --quiet
+script: ./setup.py test --quiet
