@@ -49,6 +49,12 @@ Afterwards you can just use it in three forms in any method:
 
 ## Changelog:
 
+1.0.10 (2023-01-10)
+
+  - Drop support for python 3 versions below 3.6 that are not supported by 
+    the python team anymore.
+  - Add support for all modern python versions up to 3.11
+
 1.0.5 and 1.0.6, 1.0.7, 1.0.8, 1.0.9 (2016-09-07)
 
   - package for pypi to have an easy dependency
