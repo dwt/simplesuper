@@ -2,28 +2,17 @@
 # encoding: utf-8
 # from __future__ import unicode_literals
 
-from os import path
+import os
 from setuptools import setup, find_packages
 
-here = path.abspath(path.dirname(__file__))
-
-def readme():
-    "Falls back to just file().read() on any error, because the conversion to rst is only really relevant when uploading the package to pypi"
-    from subprocess import CalledProcessError
-    try:
-        from subprocess import check_output
-        return check_output(['pandoc', '--from', 'markdown', '--to', 'rst', 'README.md']).decode('utf-8')
-    except (ImportError, OSError, CalledProcessError) as error:
-        print('pandoc is required to get the description as rst (as required to get nice rendering in pypi) - using the original markdown instead.',
-              'See http://johnmacfarlane.net/pandoc/')
-    return open(path.join(here, 'README.md')).read().decode('utf-8')
-
+here = os.path.abspath(os.path.dirname(__file__))
 
 setup(
     name='simplesuper',
     description='Simpler way to call super methods without all the repetition',
-    long_description=readme(),
-    version='1.0.9',
+    long_description=open(os.path.join(here, 'Readme.md')).read(),
+    long_description_content_type='text/markdown',
+    version='1.0.10',
     classifiers=[
         "Programming Language :: Python :: 2",
         "Topic :: Software Development",
