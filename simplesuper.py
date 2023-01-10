@@ -113,8 +113,11 @@ class SuperFinder(object):
         return False
     
     def _points_to_this_function_py3k(self, code, func):
-        other_code = inspect.getmembers(func)[4][1]
-        return id(code) == id(other_code)
+        members = dict(inspect.getmembers(func))
+        if '__code__' in members:
+            return id(code) == id(members['__code__'])
+        else:
+            return False
 
     # We cannot just use self.__class__, because we need the class where the
     # method is defined, not where it is called on.
