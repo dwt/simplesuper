@@ -21,4 +21,6 @@ matrix:
       dist: jammy
     - python: "pypy3"
       dist: jammy
+install:
+  - pip install -U pip setuptools
 script: ./setup.py test --quiet
