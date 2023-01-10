@@ -125,6 +125,7 @@ class SuperFinder(object):
                 func = getattr(klass, method_name)
                 if self._points_to_this_function(code, func):
                     return klass
+        assert False, 'Class not found'
 
 
 class SuperProxy(object):
