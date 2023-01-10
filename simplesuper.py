@@ -8,6 +8,8 @@ import re
 import sys
 import traceback
 
+IS_PY2 = 2 == sys.version_info.major
+
 try:
     reversed
 except NameError:
@@ -45,12 +47,20 @@ class SmartMethodCall(object):
         if re.search('\S', match.group(1)):
             return True
         return False
-
+    
+    def _get_argspec(self):
+        if IS_PY2:
+            (args, varargs, varkw, defaults) = inspect.getargspec(self._method)
+        else:
+            (args, varargs, varkw, defaults, kwonlyargs, kwonlydefaults, annotations) = inspect.getfullargspec(self._method)
+        
+        return (args, varargs, varkw, defaults)
+    
     def _arguments_for_super_method(self):
         if not inspect.isroutine(self._method):
             # special treatment of object's __init__
             return ([], {})
-        (args, varargs, varkw, defaults) = inspect.getargspec(self._method)
+        (args, varargs, varkw, defaults) = self._get_argspec()
         if len(args) == 1 and varargs is None:  # just self
             return ([], {})
         return self._find_arguments_for_called_method()
@@ -58,7 +68,7 @@ class SmartMethodCall(object):
     def _find_arguments_for_called_method(self):
         caller_frame = sys._getframe(3 + 2)
         caller_arg_names, caller_varg_name, caller_kwarg_name, caller_arg_values = inspect.getargvalues(caller_frame)
-        (callee_arg_names, callee_varargs, callee_kwarg_name, callee_defaults) = inspect.getargspec(self._method)
+        (callee_arg_names, callee_varargs, callee_kwarg_name, callee_defaults) = self._get_argspec()
         
         vargs = []
         kwargs = {}
